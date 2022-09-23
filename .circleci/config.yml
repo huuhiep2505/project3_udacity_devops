@@ -165,7 +165,6 @@ jobs:
               --filters Name=tag:Name,Values="backend-${CIRCLE_WORKFLOW_ID:0:7}" Name=instance-state-name,Values=running \
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --output text >> inventory.txt
-      # Here's where you will add some code to rollback on failure      
 
   configure-infrastructure:
     docker:
