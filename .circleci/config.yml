@@ -297,8 +297,6 @@ jobs:
           name: Backend smoke test.
           command: |
             # Fetch and prepare the BACKEND_IP env var
-            cd .circleci/ansible
-            export BACKEND_IP=$(tail -1 inventory.txt)
             export API_URL="http://${BACKEND_IP}:3030"
             echo "${API_URL}"
             if curl "${API_URL}/api/status" | grep "ok"
